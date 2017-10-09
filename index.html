@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<head>
+<title>Kyle D. Rush</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="shortcut icon" href="images/k-icon.ico">
+<link rel="stylesheet" href="layout/styles/style.css" type="text/css" />
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" />
+
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="jquery-ui/jquery-ui.structure.css" type="text/css" />
+<link rel="stylesheet" href="jquery-ui/jquery-ui.theme.css" type="text/css" />
+
+<script type="text/javascript" src="layout/scripts/jquery.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+<script src="layout/scripts/jquery.ba-hashchange.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68218024-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+function onLoadContainer() {
+  //debugger;
+
+ 
+
+
+};
+var cache = new Object();
+//{'':$('<div class="item">').appendTo("#content-container").load('home.html')};
+
+/** Hash-change, simple cache function */
+$(function() {
+    //debugger;
+    //cache[''] = $('<div class="item">').appendTo("#content-container").load('home.html');
+    $(window).hashchange(function() {
+
+      //alert("hashchange");
+
+      var url = window.location.hash.replace('#', '');
+      if(url == "") {
+        url = "home.html";
+      }
+      
+      $("#content-container").children(":visible").hide();
+      
+      if ( cache[url] ) {  
+        //debugger;
+        cache[url].show();
+      } else {
+          cache[url] = $('<div class="item">').appendTo("#content-container").load(url, function() {
+          $("#content-container").ready(function() {
+            onLoadContainer();
+          });
+
+        });
+
+      }
+    });
+
+    $(window).hashchange();
+
+});
+</script>
+
+<!-- script>
+$(function() {
+
+      var cache = {'':$('<div class="item">').appendTo("#content-container").load('home.html')}
+    $(window).hashchange(function() {
+      
+      var url = window.location.hash.replace('#', '');
+      
+      $("#content-container").children(":visible").hide();
+
+      if ( cache[ url ] ) {      
+        cache[url].show();
+        $("#content-container").show();                  
+      } else {
+        cache[url]=$('<div class="item">').appendTo("#content-container").load(url, function() {
+          $("#content-container").show();
+        });
+        
+      }
+    });
+
+    $(window).hashchange();
+
+});
+
+</script -->
+
+</head>
+
+<body>
+
+  <div id="header" class="row-fluid">
+    <div id="logo" class="span10 offset1">
+      <a href="#"><h1>Kyle Rush</h1></a>
+      <h2>Software Engineer</h2>
+    </div>
+    
+  </div>
+  <div id = "navbar" class="row-fluid">
+
+    <div id="nav" class="span10 offset1">
+      
+      <ul>
+        <li><a class="update-content" href="#home.html">Home</a></li>
+        <li><a class="update-content" href="#resume.html">CV</a></li>
+        <li><a class="update-content" href="#github.html">Github</a></li>
+        <li><a class="update-content" href="#blog.html">Blog</a></li>
+        <li><a href="https://www.linkedin.com/in/kyledrush">Linkdin</a></li>
+      </ul>
+    </div>
+
+    
+  </div>
+  <!-- MAIN CONTENT AREA - Ajax calls will fill this with html. -->
+  <div id="content-container">
+    
+  </div>
+
+
+
+</body>
+</html>

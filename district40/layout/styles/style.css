@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+@import url("nav.css");
+
+.body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   }
+
+#header a:link, a:visited {  
+	color:#000;
+}
+#header a:hover {
+	color:#111;
+	text-decoration: none;
+}
+
+td {
+	border-bottom:1px solid;
+}
+
+
+.img-circle {
+    border-radius: 50%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 400px;
+        
+}
+
+#header{
+	
+	background: #fff;
+	margin: 0; padding: 0;
+	border-bottom: 1px solid #000;
+	
+}
+
+#header h1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   	font: 38pt;
+   	padding-left: 10%;
+   	width:80%;
+   	color:#3B5998;
+   	text-align: center;
+}
+
+#header h2 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   	font-size: 15pt;
+   	padding-left: 10%;
+   	width:80%;
+   	color:#3B5998;
+}
+
+#header h3 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   	text-align: center;
+   	font-size: 17pt;
+}
+
+#header h4 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   	text-align: center;
+   	font-size: 12pt;
+}
+
+
+
+/********************** HOME ******************************/
+#home {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+	background: #fff;
+	padding-top:5%;
+	height:100%;
+}
+#home h1, h2{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   	font-size:28pt;
+	text-align: center;
+}
+
+#home h2 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+	font-size: 20px;
+	line-height: 100%
+}
+
+#home #home-meetings {
+	/* for visual troubleshooting  border:1px solid red; */
+	overflow-y:scroll;
+	max-height:400px;
+}
+
+#home #home-events {
+	/* for visual troubleshooting  border:1px solid red; */
+}
+
+#home #home-mission {
+	/* for visual troubleshooting  border:1px solid red; */
+}
+
+#home #home-mission #mission_statement  {
+	/* for visual troubleshooting  border:1px solid red; */
+}
+
+#home h3, h4 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+	text-align: center;
+}
+

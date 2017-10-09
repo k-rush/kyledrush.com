@@ -1,0 +1,47 @@
+<script type="text/javascript">
+$(document).ready(function(){
+   $.ajax({
+      type: 'GET', 
+      url:'https://public-api.wordpress.com/rest/v1/sites/kyledrush.wordpress.com/posts/?number=5',
+      dataType: 'json',
+      success: function(data) {
+        $.each(data.posts, function(index, element){
+          var created = new Date(element.date);
+
+          var createdString =
+            created.getUTCFullYear() +"/"+
+            ("0" + (created.getUTCMonth()+1)).slice(-2) +"/"+
+            ("0" + created.getUTCDate()).slice(-2) + " " +
+            ("0" + created.getUTCHours()).slice(-2) + ":" +
+            ("0" + created.getUTCMinutes()).slice(-2) + ":" +
+            ("0" + created.getUTCSeconds()).slice(-2);
+
+        	$("#posts").append($("<div class='row-fluid post'>").html(
+            "<div class='span10 offset1'>"
+              + "<div class='row-fluid post-header'>"
+                + "<div class='span12 post-title'>"
+                  + "<h3>" + element.title + "</h3>"
+                + "</div>" 
+              + "</div>"
+              + "<div class='row-fluid post-body'>"
+                + "<div class='span12 post-content'>"
+                  + element.content 
+                + "</div>"
+              + "</div>"
+            + "</div></div>"));
+        });
+      }});
+ });
+</script>
+<div class="row-fluid" id="blog">
+  <div class="row-fluid intro">
+      <h2><a href="kyledrush.wordpress.com">kyledrush.wordpress.com</a></h2>
+    </div> 
+
+    
+
+    <div class="row-fluid content">
+    	<div class="span12" id="posts">
+    	</div>
+    </div>
+</div>

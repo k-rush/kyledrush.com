@@ -1,0 +1,18 @@
+body {
+	background-color: black;
+}
+
+#main {
+  background-color: black;
+  font-family: courier new;
+  color:#0f0;
+  min-width:300px;
+  height:200px;
+  border:0px;
+}
+
+#debugger {
+	color:#f00;
+}
+
+
