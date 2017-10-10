@@ -16,6 +16,7 @@
 <script type="text/javascript" src="layout/scripts/jquery.js"></script>
 <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
 <script src='fullcalendar/fullcalendar.min.js'></script>
+<script src='fullcalendar/gcal.min.js'></script>
 <script src="layout/scripts/jquery.ba-hashchange.js"></script>
 
 <script>
@@ -32,8 +33,7 @@ function onLoadHome() {
     //Building the meetings list
     data.forEach(function(element, i) {
         if(element["notes"] == "District 40") {
-          html += "<tr><td>" + element['name'] + "</td><td>" +  element['location'] + "</td><td>" + element['time'] + " - " + element['end_time'] + "</td><td>" + days[element['day']] + "</td></tr>"
-            ;
+          html += "<tr><td>" + element['name'] + "</td><td>" +  element['location'] + "<br>" + element['formatted_address'] + "</td><td>" + element['time_formatted'] +  "</td><td>" + days[element['day']] + "</td></tr>";
         }
       });
     html += "</tbody></table>";
@@ -48,8 +48,28 @@ function onLoadHome() {
 function onLoadEvents() {
   /** Full calendarize the full calendar. */
   $('#calendar').fullCalendar({
-        //implement events calendar here.
-  });
+      header: {
+        left: 'prev,next',
+        center: 'title',
+        right: 'month,listMonth'
+      },
+      
+      googleCalendarApiKey: 'AIzaSyCWpIKSa_JHQWRxrQwc8ToBv6qVr3FZ5d0',
+    
+      events: 'cokqd4dp5giqibfd52fn50pcbc@group.calendar.google.com',
+      
+      eventClick: function(event) {
+        // opens events in a popup window
+        window.open(event.url, 'gcalevent', 'width=700,height=600');
+        return false;
+      },
+      
+      loading: function(bool) {
+        $('#loading').toggle(bool);
+      }
+      
+    });
+  
 };
 
 var cache = new Object();
