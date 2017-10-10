@@ -24,19 +24,20 @@ function onLoadHome() {
   //debugger;
 
   var days = {'0':'Sunday','1':'Monday','2':'Tuesday','3':'Wednesday','4':'Thursday','5':'Friday','6':'Saturday'};
-
+  var html = "";
   /** Get the meetings data into array, format it to display.*/
   //$.getJSON('https://area72aa.org/wp-admin/admin-ajax.php?action=meetings', function( data ) {
   $.getJSON('meetings.json', function( data ) {
-    $("#home-meetings").append('<table class="table"><thead><tr><td>Meeting</td><td>Location</td><td>Time</td><td>Day</td></tr></thead><tbody>');
+    html += '<table class="table"><thead><tr><th>Meeting</th><th>Location</th><th>Time</th><th>Day</th></th></thead><tbody>';
     //Building the meetings list
     data.forEach(function(element, i) {
         if(element["notes"] == "District 40") {
-          $("#home-meetings").append("<tr><<td>" + element['name'] + "</td><td>" +  element['location'] + "</td><td>" + element['time'] + " - " + element['end_time'] + "</td><td>" + days[element['day']] + "</td></tr>"
-            );
+          html += "<tr><td>" + element['name'] + "</td><td>" +  element['location'] + "</td><td>" + element['time'] + " - " + element['end_time'] + "</td><td>" + days[element['day']] + "</td></tr>"
+            ;
         }
       });
-    $("#home-meetings").append("</tbody></table>");
+    html += "</tbody></table>";
+    $("#home-meetings").append(html);
     $("#home-meetings-loading").hide();
 
   });
