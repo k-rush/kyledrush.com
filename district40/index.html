@@ -19,13 +19,9 @@
 <script src="layout/scripts/jquery.ba-hashchange.js"></script>
 
 <script>
-function onLoadContainer() {
-  //debugger;
 
-  /** Full calendarize the full calendar. */
-  $('#calendar').fullCalendar({
-        //implement events calendar here.
-  });
+function onLoadHome() {
+  //debugger;
 
   var days = {'0':'Sunday','1':'Monday','2':'Tuesday','3':'Wednesday','4':'Thursday','5':'Friday','6':'Saturday'};
 
@@ -47,6 +43,14 @@ function onLoadContainer() {
 
 
 };
+
+function onLoadEvents() {
+  /** Full calendarize the full calendar. */
+  $('#calendar').fullCalendar({
+        //implement events calendar here.
+  });
+};
+
 var cache = new Object();
 //{'':$('<div class="item">').appendTo("#content-container").load('home.html')};
 
@@ -71,7 +75,8 @@ $(function() {
       } else {
           cache[url] = $('<div class="item">').appendTo("#content-container").load(url, function() {
           $("#content-container").ready(function() {
-            onLoadContainer();
+            if(url == "home.html") onLoadHome();
+            else if (url == "events.html") onLoadEvents();
           });
 
         });
