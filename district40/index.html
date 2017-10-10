@@ -103,7 +103,13 @@ $(function() {
         });
 
       }
+      /** boldify nav links */
+      $(".update-content").css("font-weight","normal");
+      if (url == "home.html")  $("#navHome").css("font-weight","bold");
+      else if (url == "events.html")  $("#navEvents").css("font-weight","bold");
+      else if (url == "contact.html")  $("#navContact").css("font-weight","bold");
     });
+
 
     $(window).hashchange();
 
@@ -118,15 +124,11 @@ $(function() {
 
     <div class="row-fluid">
 
-      <div id="logo" class="span6">
+      <div id="logo" class="span10 offset1">
         <a href="#"><h1>District 40</h1></a>
         <h2>Alcoholics Anonymous</h2>
       </div>
 
-      <div id="location" class="span5">
-        <h4>"We must carry the message, else we ourselves can wither and those who haven't been given the truth may die" 
-          <br>(from A.A.'s Legacy of Service by Bill W.)</h4>
-      </div>
 
     </div>
   </div>
@@ -136,9 +138,9 @@ $(function() {
     <div id="nav" class="span10 offset1">
       
         <ul>
-          <li><a class="update-content" href="#home.html">Meetings</a></li>
-          <li><a class="update-content" href="#events.html">Events</a></li>
-          <li><a class="update-content" href="#contact.html">Contact</a></li>
+          <li><a class="update-content" href="#home.html" id="navHome">Meetings</a></li>
+          <li><a class="update-content" href="#events.html" id="navEvents">Events</a></li>
+          <li><a class="update-content" href="#contact.html" id="navContact">Contact</a></li>
         </ul>
         </ul>
     </div>
