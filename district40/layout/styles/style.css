@@ -41,7 +41,7 @@ td {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    	font-weight: 300;
    	font: 38pt;
-   	padding-left: 10%;
+   	/*padding-left: 10%;*/
    	width:80%;
    	color:#3B5998;
    	text-align: center;
@@ -51,9 +51,10 @@ td {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    	font-weight: 300;
    	font-size: 15pt;
-   	padding-left: 10%;
+   	/*padding-left: 10%;*/
    	width:80%;
    	color:#3B5998;
+   	text-align: center;
 }
 
 #header h3 {
@@ -118,3 +119,26 @@ td {
 	text-align: center;
 }
 
+
+/********************** EVENTS ******************************/
+
+#events {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+	background: #fff;
+	padding-top:5%;
+	height:100%;
+}
+#events h1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   	font-size:28pt;
+	text-align: center;
+}
+
+#events h2 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+	font-size: 20px;
+	line-height: 100%
+}
