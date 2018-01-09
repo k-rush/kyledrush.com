@@ -42,21 +42,19 @@ td {
 }
 
 #header h1 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-family: "Georgia", Times, serif; 
    	font-weight: 300;
    	font: 38pt;
-   	padding-left: 10%;
-   	width:80%;
    	color:#00704a;
+   	text-align:left;
 }
 
 #header h2 {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    	font-weight: 300;
-   	font: 15pt;
-   	padding-left: 10%;
-   	width:80%;
+   	font: 12pt;
    	color:#00704a;
+   	text-align:left;
 }
 
 
@@ -123,58 +121,21 @@ td {
 }
 
 
-#resume h2 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 300;
-
-
-}
-#resume .resume-content h1, h2, h3, h4, h5, p {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 300;
-   }
-#resume .resume-content h2  {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+#resume .exp-title  {
+	font-family:"Georgia", Times, serif;
    	font-weight: 300;
 
 	text-align:center;
 
 }
-#resume .resume-content h1 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+#resume h1 {
+	font-family:"Georgia", Times, serif;
    	font-weight: 300;
-
 	text-align: center;
 
 }
 
-#resume .resume-content h3 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 300;
-	text-align:center;
 
-}
-
-#resume .resume-content h4 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 300;
-	text-align:left;
-
-}
-#resume .resume-content .dates h5 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 300;
-   	font-style: italic;
-	text-align:right;
-
-}
-#resume .resume-content .company h5 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 300;
-   	font-style: italic;
-	text-align: left;
-
-}
 
 
 
@@ -243,12 +204,13 @@ td {
 }
 
 
-#blog h3, p{
+#blog p{
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    	font-weight: 300;
 }
 
 #blog h3 {
+	font-family:"Georgia", Times, serif;
 	text-align: center;
 }
 
@@ -262,7 +224,10 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 
 #blog .post-header {
 	border-bottom: 1px solid black;
+}
 
+#blog .post-title {
+	font-family:"Times New Roman";
 }
 
 #blog .post-content {
