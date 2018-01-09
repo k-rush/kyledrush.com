@@ -1,6 +1,8 @@
 @charset "utf-8";
 #navbar {
+	background-color:#ECF0F1;
 	border-bottom: 1px solid black;
+	border-top: 1px solid black;
 }
 
 #nav {
@@ -11,13 +13,11 @@
 	
 }
 #nav ul {
-	height:100%;
 	width:100%;
 	float:left; 
 	list-style:none;
 	display: inline;
-	padding:0 3% 0 0 ;
-	/* for visual troubleshooting  border:1px solid red */;
+	margin:0 0 0 0;
 }
 
 #nav li {
@@ -39,8 +39,7 @@
 	text-decoration: bold;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    	font-weight: 300;
-	color:#000; 
-	background-color:#fff;
+	color:#2980B9;
 	display: inline;
 
 }
