@@ -157,8 +157,13 @@ td {
 
 #github h1, h2, a{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   	font-weight: 300;
 	text-align: center;
+}
+
+#github h3{
+	font-family: "Georgia", Times, serif; 
+	font-weight:normal;
+	text-align: left;
 }
 
 #github h4 {
