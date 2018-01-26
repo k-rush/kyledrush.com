@@ -1,0 +1,49 @@
+<script type="text/javascript">
+$(document).ready(function(){
+   $.ajax({
+      type: 'GET', 
+      url:'https://public-api.wordpress.com/rest/v1/sites/kyledrush.wordpress.com/posts/?number=5',
+      dataType: 'json',
+      success: function(data) {
+        $.each(data.posts, function(index, element){
+          var created = new Date(element.date);
+
+          var createdString =
+            created.getUTCFullYear() +"/"+
+            ("0" + (created.getUTCMonth()+1)).slice(-2) +"/"+
+            ("0" + created.getUTCDate()).slice(-2) + " " +
+            ("0" + created.getUTCHours()).slice(-2) + ":" +
+            ("0" + created.getUTCMinutes()).slice(-2) + ":" +
+            ("0" + created.getUTCSeconds()).slice(-2);
+
+        	$("#posts").append($("<div class='row-fluid post'>").html(
+				"<div class='blog-post'>"
+	                + "<div class='blog-post__title bg--secondary'>"
+	                  + "<div class='container'>"
+		                  + "<div class='row'>"
+		                  	+ "<div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center'>"
+		                  		+ "<h1>" + element.title + "</h1>"
+		                	+ "</div>"
+		                  + "</div>"
+		              + "</div>"
+		            + "</div>"
+
+		            + "<div class='container'"
+		              + "<div class='row'"
+		                + "<div class='col-sm-8 col-sm-offset-2'>"
+	                  		+ element.content
+	                  	+ "</div>"
+	                  + "</div>"
+	                + "</div>"
+                + "</div>"
+              ));
+        });
+      }});
+ });
+</script>
+<div id="blog">
+    <div class="content">
+    	<div id="posts">
+    	</div>
+    </div>
+</div>
