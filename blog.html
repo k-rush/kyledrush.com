@@ -17,25 +17,33 @@ $(document).ready(function(){
             ("0" + created.getUTCSeconds()).slice(-2);
 
         	$("#posts").append($("<div class='row-fluid post'>").html(
-            "<div class='span10 offset1'>"
-              + "<div class='row-fluid post-header'>"
-                + "<div class='span12 post-title'>"
-                  + "<h3>" + element.title + "</h3>"
-                + "</div>" 
-              + "</div>"
-              + "<div class='row-fluid post-body'>"
-                + "<div class='span12 post-content'>"
-                  + element.content 
+				"<div class='blog-post'>"
+	                + "<div class='blog-post__title bg--secondary'>"
+	                  + "<div class='container'>"
+		                  + "<div class='row'>"
+		                  	+ "<div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center'>"
+		                  		+ "<h1>" + element.title + "</h1>"
+		                	+ "</div>"
+		                  + "</div>"
+		              + "</div>"
+		            + "</div>"
+
+		            + "<div class='container'"
+		              + "<div class='row'"
+		                + "<div class='col-sm-8 col-sm-offset-2'>"
+	                  		+ element.content
+	                  	+ "</div>"
+	                  + "</div>"
+	                + "</div>"
                 + "</div>"
-              + "</div>"
-            + "</div></div>"));
+              ));
         });
       }});
  });
 </script>
-<div class="row-fluid" id="blog">
-    <div class="row-fluid content">
-    	<div class="span12" id="posts">
+<div id="blog">
+    <div class="content">
+    	<div id="posts">
     	</div>
     </div>
 </div>
