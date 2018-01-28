@@ -24,12 +24,10 @@ $(document).ready(function(){
               if(element.description) repoHTML += "<h5>" + element.description + "</h5>";
 
               repoHTML+= `<hr>
-                            <p>Latest push: ` + formatDate(new Date(element.pushed_at)) + `<br>
-                            Created: ` + formatDate(new Date(element.created_at)) +
-                            `</p>
-                        </div>
-                    </a>
-                </div>`
+                            <p>Created: ` + new Date(element.created_at) +`<br>
+                            Latest push: ` + new Date(element.pushed_at) + `</p>`;
+              if(element.fork) repoHTML += `<p>This repository is a fork.</p>`;
+              repoHTML += `</div></a></div>`
               //console.log(repoHTML);
               $("#repos").append(repoHTML);
             });
@@ -39,21 +37,6 @@ $(document).ready(function(){
         });
 
  });
-
-function formatDate(date) {
-  var monthNames = [
-    "Jan", "Feb", "Mar",
-    "Apr", "May", "Jun", "Jul",
-    "Aug", "Sep", "Oct",
-    "Nov", "Dec"
-  ];
-
-  var day = date.getDate();
-  var monthIndex = date.getMonth();
-  var year = date.getFullYear();
-
-  return day + ' ' + monthNames[monthIndex] + ' ' + year;
-}
 </script>
 <section class="bg--secondary">
   <div class="container">
