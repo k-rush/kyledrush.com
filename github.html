@@ -18,22 +18,22 @@ $(document).ready(function(){
             $.each(data, function(index, element){
 
               repoHTML = `<div class="col-sm-4 masonry__item">
-                <a href="` + element.html_url + `">
+                <a href="` + element.html_url + `" target="_blank">
                   <div class="boxed bg--white box-shadow">`
               repoHTML += "<span>" + element.name + "</span>";
               if(element.description) repoHTML += "<h5>" + element.description + "</h5>";
 
-              repoHTML+= `<hr>
-                            <p>Latest push: ` + formatDate(new Date(element.pushed_at)) + `<br>
-                            Created: ` + formatDate(new Date(element.created_at)) +
-                            `</p>
-                        </div>
-                    </a>
-                </div>`
+              repoHTML+= 
+		              	`<hr>
+		               		<p>Latest push: ` + formatDate(new Date(element.pushed_at)) + `<br>
+		               		Created: ` + formatDate(new Date(element.created_at)) +
+		               		`</p>
+		            	</div>
+		        	</a>
+             	</div>`
               //console.log(repoHTML);
               $("#repos").append(repoHTML);
             });
-          $('#repos').accordion( "refresh" );
             
           }
         });
