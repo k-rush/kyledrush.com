@@ -1052,10 +1052,14 @@ mr = (function (mr, $, window, document){
         }
 
         //////////////// Mobile Menu Toggle
-        
-        $('.nav-mobile-toggle').on('click', function(){
-            $('nav').toggleClass('nav-open');
+        $('.nav-mobile-toggle').each(function() {
+            bindOnce($(this), function() {
+                $('nav').toggleClass('nav-open');
+            });
         });
+        //$('.nav-mobile-toggle').on('click', function(){
+        //    $('nav').toggleClass('nav-open');
+        //});
         
         $('.menu li').on('click', function(ev){
             var navItem = $(this),
@@ -1562,3 +1566,10 @@ $(function() {
     $(window).hashchange();
 
 });
+
+function bindOnce(button, callback) {
+  if(!button.hasClass("click-bound")) {
+    button.addClass("click-bound");
+    button.click(callback);
+  }
+}
