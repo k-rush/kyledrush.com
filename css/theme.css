@@ -1308,7 +1308,8 @@ ul:last-child {
 }
 /**! 12. Nav Bar **/
 nav {
-  background: none;
+  background-image: url("../images/creampaper.png");
+    background-repeat: repeat;
   z-index: 10;
 }
 .nav-bar {
@@ -7772,8 +7773,10 @@ footer .logo {
   }
 }
 .footer-3 {
-  padding: 4.875em 0;
+  padding: 2em 0;
   overflow: hidden;
+  background-image: url("../images/creampaper.png");
+  background-repeat:repeat;
 }
 .footer-3 div[class*='col-']:first-child {
   padding-left: 3.25em;
