@@ -8,13 +8,14 @@ var mr = (function ($, window, document){
 
     $(document).ready(documentReady);
     $(window).load(windowLoad);
-
+    
     function documentReady(context){
         
         context = typeof context == typeof undefined ? $ : context;
         components.documentReady.concat(components.documentReadyDeferred).forEach(function(component){
             component(context);
         });
+        
     }
 
     function windowLoad(context){
@@ -741,7 +742,8 @@ mr = (function (mr, $, window, document){
     "use strict";
     
     var documentReady = function($){
-
+        if(!mr.masDocReady) {
+            mr.masDocReady = true;
         $('.masonry').each(function(){
             var masonry = $(this);
             var masonryContainer = masonry.find('.masonry__container'),
@@ -796,7 +798,7 @@ mr = (function (mr, $, window, document){
             }
             //End of "if filterable masonry item exists"
         });
-        
+       } 
     };
 
     var windowLoad = function(){
