@@ -1308,8 +1308,6 @@ ul:last-child {
 }
 /**! 12. Nav Bar **/
 nav {
-  background-image: url("../images/creampaper.png");
-    background-repeat: repeat;
   z-index: 10;
 }
 .nav-bar {

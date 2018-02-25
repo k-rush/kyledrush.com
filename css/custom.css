@@ -3,19 +3,41 @@ Add your custom styles below
 ****************************/
 
 .nav-bar {
-	background:inherit;
+	background-color:white;
 }
 
+nav {
+    /**background-image: url("../images/creampaper.png");
+    background-repeat: repeat; */
+}
+
+/**** SKEW LIENS */
 .nav-bar:after {
   background: inherit;
   bottom: 0;
   content: '';
   display: block;
-  height: 50%;
+  height: 200%;
   left: 0;
   position: absolute;
   right: 0;
   transform: skewY(-1.5deg);
   transform-origin: 100%;
   z-index: -1;
+}
+
+
+
+.github-container {
+	height:100%;
+	overflow:scroll;
+}
+
+.bg--secondary {
+  background: #eee;
+}
+
+.overflow-scroll {
+	height:100%;
+	overflow:scroll;
 }
