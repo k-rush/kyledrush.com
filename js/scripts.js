@@ -1108,6 +1108,15 @@ mr = (function (mr, $, window, document){
                     dropDown.css('margin-left', -(difference));
                 }
             });
+
+            // SCroll-to
+            $('a[href^="#"]').click(function () {
+                $('html, body').animate({
+                    scrollTop: $( $.attr(this, 'href') ).offset().top
+                }, 500);
+
+                return false;
+            });
         }
     };
 
@@ -1447,14 +1456,14 @@ mr = (function (mr, $, window, document){
             
         }*/
 
-        var scroll = new SmoothScroll('a[href*="#"]');
+        //var scroll = new SmoothScroll('a[href*="#"]');
     };
 
     mr.smoothscroll = {
         documentReady : documentReady        
     };
 
-    mr.components.documentReady.push(documentReady);
+    //mr.components.documentReady.push(documentReady);
     return mr;
 
 }(mr, jQuery, window, document));
@@ -1601,11 +1610,11 @@ mr = (function (mr, $, window, document){
 
                     $("#posts").append($("<div class='row-fluid post'>").html(
                         "<div class='blog-post'>"
-                            + "<div class='blog-post__title bg--secondary'>"
+                            + "<div class='blog-post__title'>"
                                 + "<div class='container'>"
                                     + "<div class='row'>"
                                         + "<div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center'>"
-                                            + "<h2>" + element.title + "</h2>"
+                                            + "<h4 class='h4'>" + element.title + "</h4>"
                                     + "<span class='h6'>" + dateString + "</span>"
                                         + "</div>"
                                     + "</div>"
