@@ -30,11 +30,11 @@ nav {
 
 .github-container {
 	height:100%;
-	overflow:scroll;
 }
 
 .bg--secondary {
-  background: #eee;
+  background-image: url("../images/creampaper.png");
+  background-repeat: repeat;
 }
 
 .github-container:before {
@@ -72,4 +72,11 @@ nav {
 .overflow-scroll {
 	height:100%;
 	overflow:scroll;
+}
+
+h4.h4 {
+  font-style:italic;
+  font-weight:normal;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
