@@ -809,16 +809,16 @@ mr = (function (mr, $, window, document){
             masonry.on('layoutComplete',function(){
                 masonry.addClass('masonry--active');
             });
-
+            /*
             masonry.isotope({
               itemSelector: '.masonry__item',
               masonry: {
                 columnWidth: '.masonry__item',
                 horizontalOrder:false
               }
-            });
+            });*/
         });
-
+        /*
         $('.masonry__filters li').on('click', function(){
             var masonryFilter = $(this);
             var masonryContainer = masonryFilter.closest('.masonry').find('.masonry__container');
@@ -830,7 +830,7 @@ mr = (function (mr, $, window, document){
             masonryFilter.addClass('active');
             masonryContainer.removeClass('masonry--animate');
             masonryContainer.isotope({ filter: filterValue });
-        });
+        });*/
     };
 
     mr.masonry = {
@@ -1416,6 +1416,7 @@ mr = (function (mr, $, window, document){
     "use strict";
     
     var documentReady = function($){
+        /*
         // Smooth scroll to inner links
         var innerLinks = $('.inner-link');
 
@@ -1441,7 +1442,12 @@ mr = (function (mr, $, window, document){
                 easing: 'easeInOutCubic',
                 offset: offset
             });
-        }
+            
+
+            
+        }*/
+
+        var scroll = new SmoothScroll('a[href*="#"]');
     };
 
     mr.smoothscroll = {
@@ -1545,22 +1551,23 @@ mr = (function (mr, $, window, document){
             var repoHTML = "";
             $.each(data, function(index, element){
 
-              repoHTML = `<div class="col-sm-4 masonry__item">
-                <a href="` + element.html_url + `" target="_blank">
-                  <div class="boxed bg--white box-shadow">`
-              repoHTML += "<span>" + element.name + "</span>";
-              if(element.description) repoHTML += "<h5>" + element.description + "</h5>";
+                repoHTML = `<div class="col-sm-4 masonry__item">
+                    <a href="` + element.html_url + `" target="_blank">
+                    <div class="boxed bg--white box-shadow">`
+                repoHTML += "<span>" + element.name + "</span>";
+                if(element.description) repoHTML += "<h5>" + element.description + "</h5>";
 
-              repoHTML+= 
-                        `<hr>
-                            <p>Latest push: ` + formatDate(new Date(element.pushed_at)) + `<br>
-                            Created: ` + formatDate(new Date(element.created_at)) +
-                            `</p>
-                        </div>
+                repoHTML+= 
+                    `   <hr>
+                        <p>Latest push: ` + formatDate(new Date(element.pushed_at)) + `<br>
+                        Created: ` + formatDate(new Date(element.created_at)) +
+                        `</p>
+                    </div>
                     </a>
-                </div>`
+                    </div>`
               //console.log(repoHTML);
               $("#repos").append(repoHTML);
+              return index < 8; // Only return first 9
             });
             
           }
@@ -1588,32 +1595,34 @@ mr = (function (mr, $, window, document){
             dataType: 'json',
             success: function(data) {
                 $.each(data.posts, function(index, element){
-                var created = new Date(element.date);
+                    var created = new Date(element.date);
 
-                var dateString = formatDate(created);
+                    var dateString = formatDate(created);
 
-                $("#posts").append($("<div class='row-fluid post'>").html(
-                    "<div class='blog-post'>"
-                        + "<div class='blog-post__title bg--secondary'>"
-                            + "<div class='container'>"
-                                + "<div class='row'>"
-                                    + "<div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center'>"
-                                        + "<h2>" + element.title + "</h2>"
-                                + "<span class='h6'>" + dateString + "</span>"
+                    $("#posts").append($("<div class='row-fluid post'>").html(
+                        "<div class='blog-post'>"
+                            + "<div class='blog-post__title bg--secondary'>"
+                                + "<div class='container'>"
+                                    + "<div class='row'>"
+                                        + "<div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center'>"
+                                            + "<h2>" + element.title + "</h2>"
+                                    + "<span class='h6'>" + dateString + "</span>"
+                                        + "</div>"
                                     + "</div>"
                                 + "</div>"
                             + "</div>"
-                        + "</div>"
 
-                        + "<div class='container'"
-                            + "<div class='row'"
-                                + "<div class='col-sm-8 col-sm-offset-2'>"
-                                    + element.content
+                            + "<div class='container'"
+                                + "<div class='row'"
+                                    + "<div class='col-sm-8 col-sm-offset-2'>"
+                                        + element.content
+                                    + "</div>"
+                                  + "</div>"
                                 + "</div>"
-                              + "</div>"
                             + "</div>"
-                        + "</div>"
-                      ));
+                          ));
+
+                    return index < 3; //Only grab first 3 posts
                 });
               }
             });

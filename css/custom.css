@@ -37,6 +37,38 @@ nav {
   background: #eee;
 }
 
+.github-container:before {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 100px;
+  margin-top:-100px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 100%;
+  z-index: -1;
+
+  /*background-image: url("../images/creampaper.png");
+  background-repeat: repeat;*/
+}
+
+.bg--ternary:after {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 200%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+  z-index: -1;
+}
+
 .overflow-scroll {
 	height:100%;
 	overflow:scroll;

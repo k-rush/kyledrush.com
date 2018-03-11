@@ -18,7 +18,7 @@
     <body data-reveal-selectors="section:not(.masonry):not(:first-of-type):not(.parallax)">
 
 				
-		<div class="nav-container">
+		<div class="nav-container"  id="home">
 		    
 		    
 		
@@ -30,16 +30,16 @@
 		            <div class="nav-module menu-module left">
 		                <ul class="menu">
 		                    <li>
-		                        <a class="inner-link" href="#home">Home</a>
+		                        <a data-scroll class="inner-link" href="#home">Home</a>
 		                    </li>
 		                    <!--li>
 		                        <a href="#resume.html">Resume</a>
 		                    </li-->
 		                    <li>
-		                        <a class="inner-link" href="#github">Github</a>
+		                        <a data-scroll class="inner-link" href="#github">Github</a>
 		                    </li>
 		                    <li>
-		                        <a class="inner-link" href="#blog">Blog</a>
+		                        <a data-scroll class="inner-link" href="#blog">Blog</a>
 		                    </li>
 		                    <li>
 		                        <a href="https://www.linkedin.com/in/kyledrush" target="_blank">Linkedin</a>
@@ -59,7 +59,7 @@
 		
 		<div class="main-container" id="content-container">
 			<!-- HOME -->
-			<section id="home" class="imagebg height-90" data-overlay="6">
+			<section class="imagebg height-90" data-overlay="6">
 			    <div class="background-image-holder">
 			        <img alt="pic" src="images/dickerman.jpg">
 			    </div>
@@ -67,7 +67,7 @@
 			    <div class="container pos-vertical-center">
 			        <div class="row">
 			            <div class="col-sm-8 col-sm-offset-2">
-			                <p class="lead">Hi, I'm Kyle, software engineer with a degree in Computer Science Engineering from Lehigh University.  Recently I've worked as an analyst for Morgan Stanley on their risk team, and as a technical consultant for mcaConnect.  I'm also a musician and an avid outdoorsman.</p>
+			                <p class="lead">Hi, I'm Kyle, software engineer and web developer with a degree in Computer Science Engineering from Lehigh University.  I'm also a musician and an avid outdoorsman.</p>
 			            </div>
 			        </div>
 			        
@@ -78,6 +78,11 @@
 			<section id="github" class="bg--secondary">
 
 			 	<div class="container github-container">
+			 		<div class="col-12 center-block text-center">
+			 			<h3 class="h3">Github Projects</h3>
+			 			<h4 class="h4">Showing only the most recent contributions, check out my complete profile at <a href="http://github.com/kdr213" target="_blank">github.com/kdr213</a>
+			 			<img src="http://ghchart.rshah.org/kdr213" alt="kdr213's github contributions" />
+			 		</div>
 			    	<div class="row">
 				      	<div class="masonry">
 				        	<div class="masonry__container masonry--active masonry--animate" id="repos">
