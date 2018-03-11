@@ -30,16 +30,16 @@
 		            <div class="nav-module menu-module left">
 		                <ul class="menu">
 		                    <li>
-		                        <a href="#home.html">Home</a>
+		                        <a class="inner-link" href="#home">Home</a>
 		                    </li>
 		                    <!--li>
 		                        <a href="#resume.html">Resume</a>
 		                    </li-->
 		                    <li>
-		                        <a href="#github.html">Github</a>
+		                        <a class="inner-link" href="#github">Github</a>
 		                    </li>
 		                    <li>
-		                        <a href="#blog.html">Blog</a>
+		                        <a class="inner-link" href="#blog">Blog</a>
 		                    </li>
 		                    <li>
 		                        <a href="https://www.linkedin.com/in/kyledrush" target="_blank">Linkedin</a>
@@ -58,6 +58,45 @@
 		</div>
 		
 		<div class="main-container" id="content-container">
+			<!-- HOME -->
+			<section id="home" class="imagebg height-90" data-overlay="6">
+			    <div class="background-image-holder">
+			        <img alt="pic" src="images/dickerman.jpg">
+			    </div>
+
+			    <div class="container pos-vertical-center">
+			        <div class="row">
+			            <div class="col-sm-8 col-sm-offset-2">
+			                <p class="lead">Hi, I'm Kyle, software engineer with a degree in Computer Science Engineering from Lehigh University.  Recently I've worked as an analyst for Morgan Stanley on their risk team, and as a technical consultant for mcaConnect.  I'm also a musician and an avid outdoorsman.</p>
+			            </div>
+			        </div>
+			        
+			    </div>
+
+			</section>
+			<!-- GITHUB -->
+			<section id="github" class="bg--secondary">
+
+			 	<div class="container github-container">
+			    	<div class="row">
+				      	<div class="masonry">
+				        	<div class="masonry__container masonry--active masonry--animate" id="repos">
+				        	</div>
+			      		</div>
+			    	</div>
+			  </div>
+			</section>
+
+			<!-- BLOG -->
+
+			<section id="blog" class="bg--ternary">
+			    <div class="content">
+			    	<div id="posts">
+			    	</div>
+			    </div>
+			</div>
+
+
 		</div>
 
 		<footer class="footer-3 bg--white text-center-xs">
@@ -72,6 +111,8 @@
 				
 		<script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/scrollreveal.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>js
+        <script src="js/smooth-scroll.min.js"></script>
         <script src="js/parallax.js"></script>
         <script src="js/scripts.js"></script>
         <!--script src="script.js"></script-->

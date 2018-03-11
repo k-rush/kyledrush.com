@@ -1417,12 +1417,12 @@ mr = (function (mr, $, window, document){
     
     var documentReady = function($){
         // Smooth scroll to inner links
-        var innerLinks = $('a.inner-link');
+        var innerLinks = $('.inner-link');
 
         if(innerLinks.length){
             innerLinks.each(function(){
-                var link = $(this);
-                var href = link.attr('href');
+                var link = this;
+                var href = link.hash;
                 if(href.charAt(0) !== "#"){
                     link.removeClass('inner-link');
                 }
@@ -1526,19 +1526,130 @@ mr = (function (mr, $, window, document){
 
 }(mr, jQuery, window, document));
 
+////////////// GITHUB 
+mr = (function (mr, $, window, document){
+    "use strict";
+    var documentReady = function($){
+        $.ajax({
+          type: 'GET', 
+          url:'https://api.github.com/users/kdr213/repos',
+          dataType: 'json',
+          success: function(data) {
+            $("#repos").html('');
+            console.log(data[0].pushed_at);
+            data.sort(function(a,b) {
+              a = new Date(a.pushed_at);
+              b = new Date(b.pushed_at);
+              return a>b ? -1 : a<b ? 1 : 0;
+            });
+            var repoHTML = "";
+            $.each(data, function(index, element){
+
+              repoHTML = `<div class="col-sm-4 masonry__item">
+                <a href="` + element.html_url + `" target="_blank">
+                  <div class="boxed bg--white box-shadow">`
+              repoHTML += "<span>" + element.name + "</span>";
+              if(element.description) repoHTML += "<h5>" + element.description + "</h5>";
+
+              repoHTML+= 
+                        `<hr>
+                            <p>Latest push: ` + formatDate(new Date(element.pushed_at)) + `<br>
+                            Created: ` + formatDate(new Date(element.created_at)) +
+                            `</p>
+                        </div>
+                    </a>
+                </div>`
+              //console.log(repoHTML);
+              $("#repos").append(repoHTML);
+            });
+            
+          }
+        });
+
+    };
+
+    mr.github = {
+        documentReady : documentReady
+    }
 
 
+    mr.components.documentReady.push(documentReady);
+    return mr;
+
+}(mr, jQuery, window, document));
+
+////////////// BLOG
+
+mr = (function (mr, $, window, document){
+    var documentReady = function($){
+       $.ajax({
+            type: 'GET', 
+            url:'https://public-api.wordpress.com/rest/v1/sites/kyledrush.wordpress.com/posts/?number=5',
+            dataType: 'json',
+            success: function(data) {
+                $.each(data.posts, function(index, element){
+                var created = new Date(element.date);
+
+                var dateString = formatDate(created);
+
+                $("#posts").append($("<div class='row-fluid post'>").html(
+                    "<div class='blog-post'>"
+                        + "<div class='blog-post__title bg--secondary'>"
+                            + "<div class='container'>"
+                                + "<div class='row'>"
+                                    + "<div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center'>"
+                                        + "<h2>" + element.title + "</h2>"
+                                + "<span class='h6'>" + dateString + "</span>"
+                                    + "</div>"
+                                + "</div>"
+                            + "</div>"
+                        + "</div>"
+
+                        + "<div class='container'"
+                            + "<div class='row'"
+                                + "<div class='col-sm-8 col-sm-offset-2'>"
+                                    + element.content
+                                + "</div>"
+                              + "</div>"
+                            + "</div>"
+                        + "</div>"
+                      ));
+                });
+              }
+            });
+    };
+
+    mr.components.documentReady.push(documentReady);
+    return mr;
+
+}(mr, jQuery, window, document));
+
+
+function formatDate(date) {
+  var monthNames = [
+    "Jan", "Feb", "Mar",
+    "Apr", "May", "Jun", "Jul",
+    "Aug", "Sep", "Oct",
+    "Nov", "Dec"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return day + ' ' + monthNames[monthIndex] + ' ' + year;
+}
+
+
+/*
 function onLoadContainer() {
   mr.documentReady();
-
- 
-
 
 };
 var cache = new Object();
 //{'':$('<div class="item">').appendTo("#content-container").load('home.html')};
 
-/** Hash-change, simple cache function */
+// Hash-change, simple cache function 
 $(function() {
     //debugger;
     //cache[''] = $('<div class="item">').appendTo("#content-container").load('home.html');
@@ -1569,7 +1680,9 @@ $(function() {
 
     $(window).hashchange();
 
-});
+});*/
+
+
 
 function bindOnce(button, callback) {
   if(!button.hasClass("click-bound")) {
